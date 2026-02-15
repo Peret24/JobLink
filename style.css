@@ -1,0 +1,134 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030; 
+}
+  .dropdown-menu {
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+  }
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  .dropdown-item:hover {
+    background-color: #f1f5ff;
+  }
+
+  .job-card {
+    position: relative;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+  }
+  .job-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .verified-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #e6f4ea;
+    color: #0d9f22;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .verified-badge i {
+    font-size: 0.9rem;
+  }
+  .salary-badge {
+    background: #e8edf5;
+    color: #2b4db2;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  .company-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .filters-collapse {
+    background: #fafafa;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 0 0 12px 12px;
+    margin-top: -1px;
+  }
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+  .filter-section h6 {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  
+  .footer-link {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .footer-link:hover {
+    color: #1b0db0;
+    text-decoration: underline;
+  }
+
+footer .card {
+  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .card-header {
+  background: none;
+  border: none;
+  padding: 0.6rem 0 0.4rem 1rem; 
+  cursor: pointer;
+  flex-shrink: 0; 
+}
+
+footer .card-header h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+  margin: 0;
+  padding-left: 0.5rem; 
+}
+
+footer .card-body {
+
+  padding: 0.5rem 0.75rem 0.75rem 1.5rem !important;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  flex-grow: 1; 
+}
+
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.footer-link:hover {
+  color: #0a3ac9;
+  text-decoration: underline;
+}
+
+.list-group{
+padding-bottom: 50px;
+}
+
+

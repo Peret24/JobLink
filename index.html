@@ -1,81 +1,406 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobFinder — поиск вакансий</title>
-
-    <!-- Water.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobLink — Найди работу мечты</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>JobFinder</h1>
-    <nav>
-        <a href="#about">О сервисе</a>
-        <a href="#jobs">Вакансии</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
-</header>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.png" alt="JobLink" height="62">
+    </a>
 
-<section>
-    <h2>Найди работу мечты уже сегодня</h2>
-    <p>Тысячи вакансий по всей стране. Удобный поиск и быстрый отклик.</p>
-    <button>Найти вакансии</button>
-</section>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacts.html">Контакты / Отзывы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="FAQ.html">FAQ</a>
+        </li>
+      </ul>
+    </div>
 
-<section>
-    <h2>Поиск вакансий</h2>
-    <form>
-        <label>Должность</label>
-        <input type="text" placeholder="Например: Frontend-разработчик">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+          <img src="free-icon-user-icon-4360835.png" alt="Аватар" class="rounded-circle" width="32" height="32">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Аккаунт</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Настройки</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Избранные вакансии</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-file-text me-2"></i> Резюме</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-headset me-2"></i> Поддержка</a></li>
+        </ul>
+      </li>
+    </ul>
 
-        <label>Город</label>
-        <input type="text" placeholder="Москва">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
 
-        <button type="submit">Искать</button>
-    </form>
-</section>
+<div class="container mt-5">
+  <div class="input-group mb-2">
+    <input type="text" class="form-control form-control-lg" placeholder="Поиск вакансий...">
+    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse">
+      Фильтры
+    </button>
+  </div>
 
-<section id="about">
-    <h2>О сервисе</h2>
-    <p>JobFinder — это современная платформа для поиска работы.
-       Мы помогаем кандидатам находить лучшие вакансии,
-       а работодателям — талантливых сотрудников.</p>
-</section>
+  <div class="collapse" id="filtersCollapse">
+    <div class="filters-collapse">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="filter-section">
+            <h6>Ключевые слова</h6>
+            <input type="text" class="form-control mb-2" placeholder="например, директор по продажам">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="inTitle">
+              <label class="form-check-label" for="inTitle">в названии вакансии</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="inCompany">
+              <label class="form-check-label" for="inCompany">в названии компании</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="inDesc">
+              <label class="form-check-label" for="inDesc">в описании вакансии</label>
+            </div>
+            <a href="#" class="small text-muted">Описание языка поисковых запросов</a>
+          </div>
 
-<section id="jobs">
-    <h2>Популярные вакансии</h2>
+          <div class="filter-section">
+            <h6>Исключить слова</h6>
+            <input type="text" class="form-control" placeholder="слова через запятую">
+          </div>
 
-    <article>
-        <h3>Frontend-разработчик</h3>
-        <p>Компания: IT Solutions</p>
-        <p>Зарплата: 120 000 ₽</p>
-        <button>Откликнуться</button>
-    </article>
+          <div class="filter-section">
+            <h6>Специализация</h6>
+            <select class="form-select mb-2">
+              <option>Любая</option>
+              <option>Указать специализации...</option>
+            </select>
+          </div>
 
-    <article>
-        <h3>UI/UX дизайнер</h3>
-        <p>Компания: Creative Studio</p>
-        <p>Зарплата: 100 000 ₽</p>
-        <button>Откликнуться</button>
-    </article>
+          <div class="filter-section">
+            <h6>Отрасль компании</h6>
+            <select class="form-select mb-2">
+              <option>Любая</option>
+              <option>Указать отрасль компании...</option>
+            </select>
+          </div>
 
-    <article>
-        <h3>Backend-разработчик</h3>
-        <p>Компания: Tech Corp</p>
-        <p>Зарплата: 150 000 ₽</p>
-        <button>Откликнуться</button>
-    </article>
+          <div class="filter-section">
+            <h6>Регион</h6>
+            <input type="text" class="form-control" placeholder="Москва">
+          </div>
 
-</section>
+          <div class="filter-section">
+            <h6>Район / Метро</h6>
+            <input type="text" class="form-control mb-2" placeholder="Район">
+            <input type="text" class="form-control" placeholder="Метро">
+          </div>
+        </div>
 
-<footer id="contacts">
-    <h2>Контакты</h2>
-    <p>Email: support@jobfinder.ru</p>
-    <p>Telegram: @jobfinder</p>
-</footer>
+        <div class="col-lg-6">
+          <div class="filter-section">
+            <h6>Уровень дохода</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="showWithSalary">
+              <label class="form-check-label" for="showWithSalary">Показывать только вакансии с указанным уровнем дохода</label>
+            </div>
+            <h6>Частота выплат</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentFreq" id="daily">
+              <label class="form-check-label" for="daily">Ежедневно</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentFreq" id="weekly">
+              <label class="form-check-label" for="weekly">Раз в неделю</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentFreq" id="twice">
+              <label class="form-check-label" for="twice">Два раза в месяц</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentFreq" id="monthly">
+              <label class="form-check-label" for="monthly">Раз в месяц</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentFreq" id="project">
+              <label class="form-check-label" for="project">За проект</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h6>Образование</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="edu" id="eduAny">
+              <label class="form-check-label" for="eduAny">Не требуется или не указано</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="edu" id="eduMid">
+              <label class="form-check-label" for="eduMid">Среднее профессиональное</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="edu" id="eduHigh">
+              <label class="form-check-label" for="eduHigh">Высшее</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h6>Требуемый опыт работы</h6>
+            <select class="form-select">
+              <option>Не имеет значения</option>
+              <option>Нет опыта</option>
+              <option>От 1 года до 3 лет</option>
+              <option>От 3 до 6 лет</option>
+              <option>Более 6 лет</option>
+            </select>
+          </div>
+
+          <div class="filter-section">
+            <h6>Тип занятости</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="full">
+              <label class="form-check-label" for="full">Полная занятость</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="part">
+              <label class="form-check-label" for="part">Частичная занятость</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="temp">
+              <label class="form-check-label" for="temp">Подработка</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="shift">
+              <label class="form-check-label" for="shift">Вахта</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gph">
+              <label class="form-check-label" for="gph">Оформление по ГПХ или по совместительству</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="intern">
+              <label class="form-check-label" for="intern">Стажировка</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h6>График работы</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="day">
+              <label class="form-check-label" for="day">Рабочие часы в день</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="night">
+              <label class="form-check-label" for="night">Вечерние или ночные смены</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h6>Формат работы</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="office">
+              <label class="form-check-label" for="office">На месте работодателя</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remote">
+              <label class="form-check-label" for="remote">Удалённо</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="hybrid">
+              <label class="form-check-label" for="hybrid">Гибрид</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="travel">
+              <label class="form-check-label" for="travel">Разъездной</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-end mt-2">
+        <button class="btn btn-primary">Применить фильтры</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-3 mb-4">
+      <h5>По направлениям</h5>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          IT / Программирование
+          <span class="badge bg-primary rounded-pill">124</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Маркетинг
+          <span class="badge bg-primary rounded-pill">89</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Продажи
+          <span class="badge bg-primary rounded-pill">210</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Дизайн
+          <span class="badge bg-primary rounded-pill">56</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Финансы
+          <span class="badge bg-primary rounded-pill">73</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+      <h5>🔥 Горячие вакансии</h5>
+
+      <div class="job-card mb-3">
+        <div class="verified-badge">
+          <i class="bi bi-patch-check-fill"></i> Проверенный
+        </div>
+        <div class="d-flex">
+         
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Frontend-разработчик (React)</h6>
+            <p class="text-muted small mb-1">Яндекс • Москва • Удалёнка возможна</p>
+            <p class="small text-muted mb-2">React, TypeScript, Webpack, REST API</p>
+            <span class="salary-badge">от 180 000 ₽</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-card mb-3">
+        <div class="d-flex">
+         
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Менеджер по продажам</h6>
+            <p class="text-muted small mb-1">Сбер • Санкт-Петербург</p>
+            <p class="small text-muted mb-2">B2B, холодные звонки, CRM</p>
+            <span class="salary-badge">до 220 000 ₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 mb-4">
+      <h5>Крупные компании</h5>
+      <ul class="list-group">
+        <li class="list-group-item d-flex align-items-center">
+          <img src="icons8-yandex.png" class="me-2 rounded" width="32" height="32" alt="Яндекс">
+          Яндекс
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <img src="icons8-sber.png" class="me-2 rounded" width="32" height="32" alt="Сбер">
+          Сбер
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <img src="free-png.ru-125.png" class="me-2 rounded" width="32" height="32" alt="Т-Банк">
+          Т-Банк
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <img src="vk-logo.png" class="me-2 rounded" width="32" height="32" alt="VK">
+          VK
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <img src="wildberries-sign-logo.png" class="me-2 rounded" width="32" height="32" alt="Wildberries">
+          Wildberries
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer-wrapper" style="position: relative;">
+  <footer class="bg-light pt-4 pb-3">
+    <div class="container">
+      <div class="row footer-collapsible">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#about">
+              <h5 class="m-0">О нас</h5>
+            </div>
+            <div class="collapse show" id="about">
+              <div class="card-body">
+                <p class="small">JobLink — платформа для поиска работы и подбора персонала.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#contacts">
+              <h5 class="m-0">Контакты</h5>
+            </div>
+            <div class="collapse show" id="contacts">
+              <div class="card-body">
+                <p class="small mb-1"><i class="bi bi-envelope me-2"></i> example@gmail.com</p>
+                <p class="small mb-1"><i class="bi bi-telephone me-2"></i> +7 (495) 123-45-67</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#support">
+              <h5 class="m-0">Поддержка</h5>
+            </div>
+            <div class="collapse show" id="support">
+              <div class="card-body">
+                <a href="faq.html" class="footer-link small d-block">FAQ</a>
+                <a href="contacts.html" class="footer-link small d-block">Связаться</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-muted small mt-4">
+        © 2026 JobLink. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <div class="penguin-on-footer" style="
+    position: absolute;
+    bottom: 100%; 
+    left: 60px; 
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  ">
+    <img src="free-icon-penguin-826912.png" alt="Пингвин на футере" style="width:100%;">
+    
+  </div>
+
+  <div class="penguin-on-footer" style="
+    position: absolute;
+    bottom: 100%; 
+    right: 60px; 
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  ">
+    <img src="free-icon-penguin-2569877.png" alt="Пингвин на футере" style="width:100%;">
+    
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

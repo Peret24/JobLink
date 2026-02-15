@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ — JobLink</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.png" alt="JobLink" height="62">
+    </a>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacts.html">Контакты / Отзывы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="FAQ.html">FAQ</a>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+          <img src="free-icon-user-icon-4360835.png" alt="Аватар" class="rounded-circle" width="32" height="32">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Аккаунт</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Настройки</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i> Избранные вакансии</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-file-text me-2"></i> Резюме</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-headset me-2"></i> Поддержка</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="text-center mb-4">Часто задаваемые вопросы</h1>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+              Как зарегистрироваться на JobLink?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Перейдите на главную страницу и нажмите кнопку «Зарегистрироваться» в правом верхнем углу. Выберите тип аккаунта: соискатель или работодатель. Заполните простую форму — и вы сразу получите доступ к платформе.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+              Бесплатно ли размещать резюме?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Да! Создание и публикация резюме полностью бесплатны для соискателей. Вы также можете откликаться на вакансии без ограничений.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+              Как работодателю разместить вакансию?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              После регистрации как работодатель перейдите в личный кабинет и нажмите «Добавить вакансию». Укажите должность, зарплату, требования и условия. Вакансия будет опубликована после модерации (обычно в течение 1 часа).
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+              Можно ли скрыть резюме от текущего работодателя?
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Да! В настройках резюме вы можете включить режим «Не показывать текущему работодателю» или сделать резюме видимым только по прямой ссылке.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+              Как связаться с поддержкой?
+            </button>
+          </h2>
+          <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Вы можете написать нам через форму на странице <a href="contacts.html">«Контакты / Отзывы»</a>, отправить email на example@gmail.com или воспользоваться чатом в личном кабинете. Мы отвечаем в течение 24 часов.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-wrapper" style="position: relative;">
+  <footer class="bg-light pt-4 pb-3">
+    <div class="container">
+      <div class="row footer-collapsible">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#about">
+              <h5 class="m-0">О нас</h5>
+            </div>
+            <div class="collapse show" id="about">
+              <div class="card-body">
+                <p class="small">JobLink — платформа для поиска работы и подбора персонала.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#contacts">
+              <h5 class="m-0">Контакты</h5>
+            </div>
+            <div class="collapse show" id="contacts">
+              <div class="card-body">
+                <p class="small mb-1"><i class="bi bi-envelope me-2"></i> example@gmail.com</p>
+                <p class="small mb-1"><i class="bi bi-telephone me-2"></i> +7 (495) 123-45-67</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-header" data-bs-toggle="collapse" data-bs-target="#support">
+              <h5 class="m-0">Поддержка</h5>
+            </div>
+            <div class="collapse show" id="support">
+              <div class="card-body">
+                <a href="FAQ.html" class="footer-link small d-block">FAQ</a>
+                <a href="contacts.html" class="footer-link small d-block">Связаться</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-muted small mt-4">
+        © 2026 JobLink. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <div class="penguin-on-footer" style="
+    position: absolute;
+    bottom: 100%; 
+    left: 60px; 
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  ">
+    <img src="free-icon-penguin-826912.png" alt="Пингвин на футере" style="width:100%;">
+    
+  </div>
+  <div class="penguin-on-footer" style="
+    position: absolute;
+    bottom: 100%; 
+    right: 60px; 
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  ">
+    <img src="free-icon-penguin-2569877.png" alt="Пингвин на футере" style="width:100%;">
+    
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
